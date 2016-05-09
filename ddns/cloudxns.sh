@@ -13,7 +13,7 @@ if [ -f "$LAST_IP_FILE" ];then
     . $LAST_IP_FILE
 fi
 
-IP=$(curl -s ip.xdty.org)
+IP=$(curl -sL http://1212.ip138.com/ic.asp | grep -Eo '\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b')
 
 if [ "$IP" = "$LAST_IP" ];then
     echo "$(date) -- Already updated."
